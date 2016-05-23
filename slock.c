@@ -640,7 +640,7 @@ lockscreen(Display *dpy, int screen) {
 #endif
 
 	Atom name_atom = XA_WM_NAME;
-	XTextProperty name_prop = { "slock", name_atom, 8, 5 };
+	XTextProperty name_prop = { (unsigned char*)"slock", name_atom, 8, 5 };
 	XSetWMName(dpy, lock->win, &name_prop);
 
 	// Atom name_ewmh_atom = XInternAtom(dpy, "_NET_WM_NAME", False);
