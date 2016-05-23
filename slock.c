@@ -373,7 +373,7 @@ static void
 play_beep(int async) {
 #if PLAY_AUDIO
 	char snd[255] = {0};
-	snprintf(snd, sizeof(snd), "aplay %s/slock/beep.wav 2> /dev/null%s",
+	snprintf(snd, sizeof(snd), "paplay %s/slock/beep.wav 2> /dev/null%s",
 		getenv("HOME"), async ? " &" : "");
 	system(snd);
 #else
@@ -385,7 +385,7 @@ static void
 play_alarm(int async) {
 #if PLAY_AUDIO
 	char snd[255] = {0};
-	snprintf(snd, sizeof(snd), "aplay %s/slock/police.wav 2> /dev/null%s",
+	snprintf(snd, sizeof(snd), "paplay %s/slock/police.wav 2> /dev/null%s",
 		getenv("HOME"), async ? " &" : "");
 	system(snd);
 #else
