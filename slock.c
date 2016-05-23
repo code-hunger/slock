@@ -29,14 +29,19 @@
 #define CMD_LENGTH (500 * sizeof(char))
 
 #define POWEROFF 1
-#define TWILIO_SEND 1
+#define TWILIO_SEND 0
 #define WEBCAM_SHOT 1
 #define IMGUR_UPLOAD 0
 #define PLAY_AUDIO 1
 #define TRANSPARENT 1
 
+#if IMGUR_UPLOAD
 #include "imgur.h"
+#endif
+
+#if TWILIO_SEND
 #include "twilio.h"
+#endif
 
 typedef struct {
   char *link;
